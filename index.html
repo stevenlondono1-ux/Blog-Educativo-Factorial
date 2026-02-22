@@ -2,350 +2,191 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Blog Educativo - El Factorial</title>
+<title>Aprendamos el Factorial</title>
 
 <style>
 body{
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    background: linear-gradient(to bottom, #a8e6ff, #ffffff);
-    margin:0;
-    padding:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    text-align: center;
+    padding: 20px;
+    color: #333;
 }
 
-header{
-    background:#ff9800;
-    color:white;
-    text-align:center;
-    padding:25px;
-    font-size:35px;
+.container{
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    max-width: 700px;
+    margin: auto;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+    animation: aparecer 1s ease-in-out;
 }
 
-section{
-    padding:25px;
-    margin:20px;
-    background:white;
-    border-radius:20px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+@keyframes aparecer{
+    from{opacity:0; transform: scale(0.9);}
+    to{opacity:1; transform: scale(1);}
 }
 
-h2{
-    color:#ff5722;
-}
-
-.personajes{
-    text-align:center;
-}
-
-.personajes img{
-    width:140px;
-    margin:10px;
-    animation: flotar 3s infinite;
-}
-
-.ejemplo{
-    background:#fff3cd;
-    padding:15px;
-    border-radius:15px;
-    font-size:20px;
-}
-
-.calculadora{
-    background:#c8f7c5;
-    padding:20px;
-    border-radius:15px;
-    text-align:center;
-}
-
-input{
-    padding:10px;
-    font-size:18px;
-    width:120px;
-    text-align:center;
+img{
+    width: 130px;
+    margin-bottom: 10px;
 }
 
 button{
-    padding:10px 20px;
-    font-size:18px;
-    background:#673ab7;
-    color:white;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
-    margin:5px;
+    padding: 10px 20px;
+    margin: 8px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #4CAF50;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
 }
 
 button:hover{
-    background:#512da8;
+    transform: scale(1.1);
+    background: #45a049;
 }
 
-.resultado{
-    margin-top:15px;
-    font-size:18px;
-    font-weight:bold;
-    color:#2e7d32;
+input{
+    padding: 8px;
+    width: 100px;
+    font-size: 16px;
+    text-align: center;
 }
 
-.correcto{ color:green; }
-.incorrecto{ color:red; }
-
-@keyframes flotar{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-10px);}
-    100%{transform:translateY(0);}
+.correcto{
+    color: green;
+    font-weight: bold;
+    animation: saltar 0.5s;
 }
 
-footer{
-    text-align:center;
-    padding:20px;
-    background:#673ab7;
-    color:white;
+.incorrecto{
+    color: red;
+    font-weight: bold;
+}
+
+@keyframes saltar{
+    0%{transform: translateY(0);}
+    50%{transform: translateY(-10px);}
+    100%{transform: translateY(0);}
 }
 </style>
 </head>
 
 <body>
 
-<header>
-🌟 ¡Aprendamos el Factorial! 🎉
-</header>
+<div class="container">
 
-<section class="personajes">
-<img src="https://cdn-icons-png.flaticon.com/512/1998/1998610.png">
-<img src="https://cdn-icons-png.flaticon.com/512/1998/1998627.png">
-<p>👦 ¡Descubramos cómo funciona el factorial! 👧</p>
-</section>
+<h1>Aprendamos el Factorial</h1>
 
-<section>
-<h2>📘 ¿Qué es el factorial?</h2>
-
-<p id="definicion">
-Esta operación matemática tiene un amplio uso en diferentes áreas,
-especialmente en probabilidad. Se define el factorial de un número, denotado
-como n!, como el producto de todos los enteros positivos menores o iguales a n.
-El factorial de un número es la multiplicación de todos los enteros positivos desde
-uno hasta el propio número. 
-
-</p>
-
-<button onclick="leerDefinicion()">🔊 Escuchar definición</button>
-
-<p style="font-size:22px; text-align:center;">
-n! = n × (n-1) × (n-2) × ... × 2 × 1
-
-</p>
-<section>
-<h2>❗ ¿Cómo se representa el factorial?</h2>
-
-<p id="explicacionSigno">
-El factorial se representa con un signo de admiración.
-Este signo se escribe inmediatamente después del número.
-Por ejemplo, cinco factorial se escribe cinco signo de admiración, es decir: 5!.
-</p>
-
-<button onclick="leerSigno()">🔊 Escuchar explicación</button>
-
-<div class="ejemplo">
-5! &nbsp;&nbsp; 3! &nbsp;&nbsp; 0!
-</div>
-
-</section>
-<div class="ejemplo">
-Ejemplo:  
-4! = 4 × 3 × 2 × 1 = 24
-</div>
-
-</section>
-
-<section>
-<h2>🧠 ¿Por qué 0! = 1?</h2>
-
-<div class="ejemplo">
-Por definición matemática:  
-0! = 1
-</div>
+<img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png">
 
 <p>
-Se define así para que las fórmulas de combinatoria funcionen correctamente.
-Por ejemplo, en las combinaciones:
-</p>
-<button onclick="leerCeroFactorial()">🔊 Escuchar explicación de 0!</button>
-
-<p style="text-align:center; font-size:20px;"> 
+El factorial se representa con el signo de admiración: !
 </p>
 
 <p>
-Si 0! no fuera 1, muchas fórmulas dejarían de funcionar.
-Además, el factorial representa formas de ordenar elementos.
-Si no tenemos elementos (cero objetos), solo existe una forma de no ordenar nada.
+El factorial de un número es el producto de todos los números enteros positivos desde ese número hasta uno.
 </p>
 
-</section>
+<p>
+Cero factorial es igual a uno.
+</p>
 
-<section class="calculadora">
-<h2>🧮 Calculadora Paso a Paso</h2>
+<button onclick="explicar()">🔊 Escuchar explicación</button>
 
-<p>Escribe un número entero positivo:</p>
+<hr>
 
-<input type="number" id="numero" min="0">
-<br><br>
-<button onclick="calcularFactorial()">Calcular</button>
+<h2>Calculadora</h2>
 
-<div class="resultado" id="resultado"></div>
-</section>
+<input type="number" id="numero" placeholder="Número">
+<br>
+<button onclick="calcular()">Calcular</button>
 
-<section>
-<h2>✏️ Ejercicios</h2>
+<h3 id="resultado"></h3>
 
-<p>1️⃣ ¿Cuánto vale 5!?</p>
-<input type="number" id="ej1">
-<button onclick="verificar1()">Verificar</button>
-<div id="r1"></div>
+<hr>
 
-<br><br>
+<h2>Quiz Interactivo</h2>
 
-<p>2️⃣ ¿Cuánto vale 3!?</p>
-<input type="number" id="ej2">
-<button onclick="verificar2()">Verificar</button>
-<div id="r2"></div>
+<p>¿Cuánto es 4! ?</p>
+<input type="number" id="r1">
+<button onclick="verificar(1,24)">Responder</button>
+<p id="m1"></p>
 
-<br><br>
+<p>¿Cuánto es 3! ?</p>
+<input type="number" id="r2">
+<button onclick="verificar(2,6)">Responder</button>
+<p id="m2"></p>
 
-<p>3️⃣ ¿Cuánto vale 0!?</p>
-<input type="number" id="ej3">
-<button onclick="verificar3()">Verificar</button>
-<div id="r3"></div>
+<p>¿Cuánto es 0! ?</p>
+<input type="number" id="r3">
+<button onclick="verificar(3,1)">Responder</button>
+<p id="m3"></p>
 
-</section>
-
-<footer>
-Blog Educativo ✏️ | Licenciatura en Matemáticas
-</footer>
+</div>
 
 <script>
 
-function calcularFactorial() {
+function hablar(texto){
+    let voz = new SpeechSynthesisUtterance(texto);
+    voz.lang = "es-CO";
+    speechSynthesis.speak(voz);
+}
+
+function explicar(){
+    let texto = "El factorial es una operación matemática. " +
+    "Se representa con el signo de admiración. " +
+    "Por ejemplo cinco factorial se escribe cinco signo de admiración. " +
+    "El factorial de un número es el producto de todos los números desde ese número hasta uno. " +
+    "Cero factorial es igual a uno porque por definición matemática el producto vacío es uno.";
+
+    hablar(texto);
+}
+
+function calcular(){
     let n = parseInt(document.getElementById("numero").value);
-    let resultadoDiv = document.getElementById("resultado");
 
-    if (isNaN(n) || n < 0) {
-        resultadoDiv.innerHTML = "⚠️ Ingresa un número entero positivo.";
-        return;
-    }
-
-    if (n === 0) {
-        resultadoDiv.innerHTML = "0! = 1";
+    if(isNaN(n) || n < 0){
+        document.getElementById("resultado").innerHTML = "Escribe un número válido";
         return;
     }
 
     let factorial = 1;
-    let procedimiento = n + "! = ";
 
-    for (let i = n; i >= 1; i--) {
-        factorial *= i;
-        procedimiento += i;
-        if (i > 1) procedimiento += " × ";
-    }
-
-    procedimiento += " = " + factorial;
-
-    resultadoDiv.innerHTML = procedimiento;
-}
-
-
-// 🎤 VOZ MASCULINA ESPAÑOL COLOMBIA
-function leerDefinicion() {
-
-    let texto = document.getElementById("definicion").innerText;
-
-    // Corregir pronunciación
-    texto = texto.replace(/factorial/gi, "factoriál");
-
-    hablar(texto);
-}
-
-
-function leerCeroFactorial() {
-
-    let texto = `
-    Cero factoriál es igual a uno.
-    Se define así para que las fórmulas matemáticas funcionen correctamente.
-    Si no tenemos elementos para ordenar, existe exactamente una forma de no ordenar nada.
-    `;
-
-    hablar(texto);
-}
-
-
-function hablar(texto) {
-
-    let mensaje = new SpeechSynthesisUtterance(texto);
-
-    let voces = speechSynthesis.getVoices();
-    let vozSeleccionada = null;
-
-    // Buscar voz español Colombia
-    for (let i = 0; i < voces.length; i++) {
-        if (voces[i].lang === "es-CO") {
-            vozSeleccionada = voces[i];
-            break;
+    if(n === 0){
+        factorial = 1;
+    }else{
+        for(let i=1; i<=n; i++){
+            factorial *= i;
         }
     }
 
-    // Si no encuentra es-CO, usar cualquier español
-    if (!vozSeleccionada) {
-        for (let i = 0; i < voces.length; i++) {
-            if (voces[i].lang.includes("es")) {
-                vozSeleccionada = voces[i];
-                break;
-            }
-        }
+    document.getElementById("resultado").innerHTML = n + "! = " + factorial;
+
+    hablar(n + " factorial es igual a " + factorial);
+}
+
+function verificar(pregunta, respuestaCorrecta){
+
+    let valor = parseInt(document.getElementById("r"+pregunta).value);
+    let mensaje = document.getElementById("m"+pregunta);
+
+    if(valor === respuestaCorrecta){
+        mensaje.innerHTML = "🎉 ¡Correcto!";
+        mensaje.className = "correcto";
+        hablar("Muy bien, respuesta correcta");
+    }else{
+        mensaje.innerHTML = "❌ Incorrecto, intenta otra vez";
+        mensaje.className = "incorrecto";
+        hablar("Respuesta incorrecta, intenta nuevamente");
     }
-
-    mensaje.voice = vozSeleccionada;
-    mensaje.lang = "es-CO";
-
-    // Configuración voz masculina juvenil
-    mensaje.rate = 1.2;
-    mensaje.pitch = 1.1;
-
-    speechSynthesis.speak(mensaje);
-    function leerSigno() {
-
-    let texto = `
-    El factorial se representa con un signo de admiración.
-    Este signo se escribe inmediatamente después del número.
-    Por ejemplo, cinco factoriál se escribe cinco signo de admiración.
-    `;
-
-    hablar(texto);
-
-}
-
-
-// ✅ Verificación ejercicios
-function verificar1(){
-    let valor = document.getElementById("ej1").value;
-    document.getElementById("r1").innerHTML =
-        valor == 120 ? "<span class='correcto'>✔ Correcto 🎉</span>"
-        : "<span class='incorrecto'>❌ Incorrecto</span>";
-}
-
-function verificar2(){
-    let valor = document.getElementById("ej2").value;
-    document.getElementById("r2").innerHTML =
-        valor == 6 ? "<span class='correcto'>✔ Correcto 🎉</span>"
-        : "<span class='incorrecto'>❌ Incorrecto</span>";
-}
-
-function verificar3(){
-    let valor = document.getElementById("ej3").value;
-    document.getElementById("r3").innerHTML =
-        valor == 1 ? "<span class='correcto'>✔ Correcto 🎉</span>"
-        : "<span class='incorrecto'>❌ Incorrecto</span>";
 }
 
 </script>
 
 </body>
-
 </html>
