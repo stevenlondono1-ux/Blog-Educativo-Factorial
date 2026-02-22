@@ -133,7 +133,22 @@ uno hasta el propio número.
 n! = n × (n-1) × (n-2) × ... × 2 × 1
 
 </p>
+<section>
+<h2>❗ ¿Cómo se representa el factorial?</h2>
 
+<p id="explicacionSigno">
+El factorial se representa con un signo de admiración.
+Este signo se escribe inmediatamente después del número.
+Por ejemplo, cinco factorial se escribe cinco signo de admiración, es decir: 5!.
+</p>
+
+<button onclick="leerSigno()">🔊 Escuchar explicación</button>
+
+<div class="ejemplo">
+5! &nbsp;&nbsp; 3! &nbsp;&nbsp; 0!
+</div>
+
+</section>
 <div class="ejemplo">
 Ejemplo:  
 4! = 4 × 3 × 2 × 1 = 24
@@ -294,6 +309,16 @@ function hablar(texto) {
     mensaje.pitch = 1.1;
 
     speechSynthesis.speak(mensaje);
+    function leerSigno() {
+
+    let texto = `
+    El factorial se representa con un signo de admiración.
+    Este signo se escribe inmediatamente después del número.
+    Por ejemplo, cinco factoriál se escribe cinco signo de admiración.
+    `;
+
+    hablar(texto);
+
 }
 
 
@@ -322,4 +347,5 @@ function verificar3(){
 </script>
 
 </body>
+
 </html>
